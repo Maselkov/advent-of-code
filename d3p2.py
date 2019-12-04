@@ -37,8 +37,8 @@ class Segment:
             return None
         det_l = det(self.a.x, self.a.y, self.b.x, self.b.y)
         det_r = det(other.a.x, other.a.y, other.b.x, other.b.y)
-        new_x = (det_l * x3mx4 - x1mx2 * det_r) / denom
-        new_y = (det_l * y3my4 - y1my2 * det_r) / denom
+        new_x = det(det_l, x1mx2, det_r, x3mx4) / denom
+        new_y = det(det_l, y1my2, det_r, y3my4) / denom
         if not new_x and not new_y:
             return None
         point = Point(new_x, new_y)
