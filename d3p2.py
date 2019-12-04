@@ -5,25 +5,21 @@ def det(a, b, c, d):
     return a * d - b * c
 
 
-def distance(a, b):
-    return math.sqrt(((a.x - b.x)**2) + ((a.y - b.y)**2))
-
-
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
     def lies_on(self, segment):
-        return distance(segment.a, self) + distance(segment.b,
-                                                    self) == segment.length
+        return Segment(segment.a, self).length + Segment(
+            segment.b, self).length == segment.length
 
 
 class Segment:
     def __init__(self, a, b):
         self.a = a
         self.b = b
-        self.length = distance(a, b)
+        self.length = math.sqrt(((a.x - b.x)**2) + ((a.y - b.y)**2))
 
     def find_intersection(self, other):
         # We look for the point of intersection between the two lines
