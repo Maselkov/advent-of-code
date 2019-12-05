@@ -1,6 +1,5 @@
 import operator
 
-SOUGHT = 19690720
 with open("d5.txt") as f:
     intcode = [int(x) for x in f.read().split(",")]
 
