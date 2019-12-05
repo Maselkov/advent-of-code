@@ -8,7 +8,6 @@ POINTER_INCREMENT = {1: 4, 2: 4, 3: 2, 4: 2, 99: 0}
 
 class Instruction:
     def __init__(self, computer):
-        self.pointer = computer.pointer
         self.mem = computer.mem
         code = str(self.mem[computer.pointer])
         self.opcode = int(code[-2:])

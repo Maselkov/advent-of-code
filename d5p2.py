@@ -63,7 +63,7 @@ class Instruction:
         if self.opcode in (7, 8):
             self.increment_pointer()
             func = {7: operator.lt, 8: operator.eq}.get(self.opcode)
-            if func(*self.parameters[:2]):
+            if func(*self.parameters):
                 return self.write(1)
             return self.write(0)
 
