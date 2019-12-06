@@ -17,9 +17,6 @@ def find_children(identifier):
     return children
 
 
-orbits = []
-
-
 class Body:
     def __init__(self, name):
         self.name = name
