@@ -81,7 +81,8 @@ class Computer:
         self.inputs = []
 
     def run(self):
-        sys.stdin = io.StringIO("".join(f"{x}\n" for x in self.inputs))
+        if self.inputs:
+            sys.stdin = io.StringIO("".join(f"{x}\n" for x in self.inputs))
         f = io.StringIO()
         with contextlib.redirect_stdout(f):
             return_code = None
