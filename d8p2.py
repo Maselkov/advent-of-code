@@ -43,4 +43,5 @@ for layer in layers:
             if image[i][j] == TRANSPARENT:
                 image[i][j] = pixel
 
+# This doesn't seem to work in cmd, but works in powershell and bash
 display_image(image)
