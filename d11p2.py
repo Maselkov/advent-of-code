@@ -211,8 +211,6 @@ while True:
         x -= 1
 xs = [p[0] for p in panels]
 ys = [p[1] for p in panels]
-width = max(xs) + abs(min(xs))
-height = max(ys) + abs(min(ys))
 image = []
 for y in range(min(ys), max(ys) + 1):
     line = ""
